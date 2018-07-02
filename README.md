@@ -20,15 +20,15 @@ Add the following line to your .zshrc depending on your zsh plugin manager
 
 ##### [antigen](https://github.com/zsh-users/antigen):
 
-    antigen theme eendroroy/nothing nothing
+    antigen theme zouxiaoliang/nothing nothing
 
 ##### [zgen](https://github.com/tarjoilija/zgen):
 
-    zgen load eendroroy/nothing
+    zgen load zouxiaoliang/nothing
 
 ##### [zplug](https://github.com/zplug/zplug):
 
-    zplug "eendroroy/nothing"
+    zplug "zouxiaoliang/nothing"
 
 ##### [oh-my-zsh: Overriding and Adding Themes](https://github.com/robbyrussell/oh-my-zsh/wiki/Customization#overriding-and-adding-themes)
 
