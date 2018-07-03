@@ -6,13 +6,17 @@ function precmd(){
   autoload -U add-zsh-hook
   setopt prompt_subst
 
-  if [[ "$NT_HIDE_COUNT" == '1' ]]; then
-  	command_count=''
+  local current_dir='%F{gray}%{$terminfo[bold]$fg[blue]%}%~%{$reset_color%}%f'
+
+  if [[ $UID -eq 0 ]]; then
+    local user_host='%{$terminfo[bold]$fg[red]%}%n@%m%{$reset_color%}'
+    local user_symbol='%F{red}@#'
   else
-  	command_count='%F{gray}%i %f'
+    local user_host='%{$terminfo[bold]$fg[green]%}%n@%m%{$reset_color%}'
+    local user_symbol='%F{gray}@$%f'
   fi
 
-  PROMPT='${command_count}%(?.%F{green}${NT_PROMPT_SYMBOL}%f.%F{red}${NT_PROMPT_SYMBOL}%f) '
+  PROMPT='${user_symbol} ${current_dir} %(?.%F{green}${NT_PROMPT_SYMBOL}%f.%F{red}${NT_PROMPT_SYMBOL}%f) '
 
   if [[ "$NT_HIDE_EXIT_CODE" == '1' ]]; then
   	RPROMPT=''
